@@ -318,6 +318,10 @@ abline(h=mean(diabetic$readmit_30_days ),lty=2,col="red")
 You see that the model is capturing something.
 Do you see any problem with this model with protected attributes such as race and gender?
 
+```{r}
+summary(diabetes_glm_model)
+```
+
 ## In class activity
 
 Choose one of the data described above as your target problem.
@@ -325,7 +329,7 @@ Choose one of the data described above as your target problem.
 ~~~
 Please write your answer in full sentences.
 
-
+Diabetes
 ~~~
 
 Discuss what a favorable label in this problem is and what does a favorable label grant the affected user?
@@ -334,6 +338,7 @@ Is it assertive or non-punitive?
 ~~~
 Please write your answer in full sentences.
 
+The readmission label is the favorable label, it is assistive if the patient can know that which hospital has a lower readmission rate to help them decide which hospital they are going to.
 
 ~~~
 
@@ -341,6 +346,8 @@ What type of justice is this issue about?
 
 ~~~
 Please write your answer in full sentences.
+
+Procedure Justice. If we discuss from a hospital perspective, the readmission label of the patient might lead to an inappropriate decision strategy whether the hospital gonna accept the patient or not due to not exceed the threshold of readmission rate within 30days to prevent from getting punishment from the government.
 
 
 ~~~
@@ -350,6 +357,9 @@ Discuss the potential concerns about the data being used.
 ~~~
 Please write your answer in full sentences.
 
+The patient can choose their hospital based on the readmission rate of the hospital. 
+
+The hospital can use the label of the patient to control their overall readmission rate.
 
 ~~~
 
@@ -358,7 +368,7 @@ Discuss what type of group fairness metrics is appropriate for this problem.
 ~~~
 Please write your answer in full sentences.
 
-
+Separation. Since the label might lead to an external human intervene of the result. The prediction $\hat{Y}$ will no longer be independent to the $Z|Y$.
 ~~~
 
 Using the appropriate fairness metrics, show if there are concerns in the prediction algorithm.
